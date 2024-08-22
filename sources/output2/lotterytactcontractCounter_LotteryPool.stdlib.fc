@@ -3,7 +3,7 @@ global slice __tact_context_sender;
 global cell __tact_context_sys;
 global int __tact_randomized;
 
-slice __tact_verify_address(slice address) inline {
+slice __tact_verify_address(slice address) impure inline {
     throw_unless(136, address.slice_bits() == 267);
     var h = address.preload_uint(11);
     throw_if(137, h == 1279);
@@ -24,7 +24,7 @@ int __tact_my_balance() inline {
     return pair_first(get_balance());
 }
 
-forall X -> X __tact_not_null(X x) inline {
+forall X -> X __tact_not_null(X x) impure inline {
     throw_if(128, null?(x)); return x;
 }
 
@@ -230,7 +230,7 @@ int $global_random(int $min, int $max) impure inline {
     $b = store_int($b, 0, 3);
     $b = __tact_store_address($b, $params'to);
     $b = store_coins($b, $params'value);
-    $b = store_int($b, 0, ((((1 + 4) + 4) + 64) + 32));
+    $b = store_int($b, 0, 105);
     if (( ((~ null?($params'code))) ? (true) : ((~ null?($params'data))) )) {
         $b = __tact_store_bool($b, true);
         builder $bc = begin_cell();
@@ -275,17 +275,17 @@ int $global_random(int $min, int $max) impure inline {
         $code = $init2'code;
         $data = $init2'data;
     }
-    if ((0 > 0)) {
+    if (false) {
         var ($ctx'bounced, $ctx'sender, $ctx'value, $ctx'raw) = __tact_context_get();
         int $balance = __tact_my_balance();
         int $balanceBeforeMessage = ($balance - $ctx'value);
         if (($balanceBeforeMessage < 0)) {
             raw_reserve(0, 0);
-            $global_send($SendParameters$_constructor_bounce_to_value_mode_body_code_data($bounce, $to, 0, (128 + 2), $body, $code, $data));
+            $global_send($SendParameters$_constructor_bounce_to_value_mode_body_code_data($bounce, $to, 0, 130, $body, $code, $data));
             return ((($self'winner'value, $self'winner'token, $self'winner'address), $self'owner, $self'balance, $self'tokenCost, $self'usersToken, $self'tokensUser, $self'tokensIndex, $self'tokenArrayLength, $self'maximumTokenSupply), ());
         }
     }
-    $global_send($SendParameters$_constructor_bounce_to_value_mode_body_code_data($bounce, $to, 0, (64 + 2), $body, $code, $data));
+    $global_send($SendParameters$_constructor_bounce_to_value_mode_body_code_data($bounce, $to, 0, 66, $body, $code, $data));
     return ((($self'winner'value, $self'winner'token, $self'winner'address), $self'owner, $self'balance, $self'tokenCost, $self'usersToken, $self'tokensUser, $self'tokensIndex, $self'tokenArrayLength, $self'maximumTokenSupply), ());
 }
 

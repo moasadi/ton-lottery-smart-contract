@@ -24,8 +24,8 @@ _ $Context$_get_value((int, slice, int, slice) v) inline {
 ;; TLB: _ bounce:bool to:address value:int257 mode:int257 body:Maybe ^cell code:Maybe ^cell data:Maybe ^cell = SendParameters
 ;;
 
-((int, slice, int, int, cell, cell, cell)) $SendParameters$_constructor_bounce_to_value_mode_body_code_data(int bounce, slice to, int value, int mode, cell body, cell code, cell data) inline {
-    return (bounce, to, value, mode, body, code, data);
+((int, slice, int, int, cell, cell, cell)) $SendParameters$_constructor_bounce_to_value_mode_body_code_data(int $bounce, slice $to, int $value, int $mode, cell $body, cell $code, cell $data) inline {
+    return ($bounce, $to, $value, $mode, $body, $code, $data);
 }
 
 ;;
@@ -57,8 +57,8 @@ cell $DeployOk$_store_cell((int) v) inline {
     return $DeployOk$_store(begin_cell(), v).end_cell();
 }
 
-((int)) $DeployOk$_constructor_queryId(int queryId) inline {
-    return (queryId);
+((int)) $DeployOk$_constructor_queryId(int $queryId) inline {
+    return ($queryId);
 }
 
 ;;
@@ -112,8 +112,8 @@ tuple $TokenPayoutResponse$_load_opt(cell cl) inline {
     return (vvv'token);
 }
 
-((slice)) $TokenPayoutResponse$_constructor_token(slice token) inline {
-    return (token);
+((slice)) $TokenPayoutResponse$_constructor_token(slice $token) inline {
+    return ($token);
 }
 
 ;;
@@ -141,8 +141,8 @@ builder $Winner$_store(builder build_0, (int, int, slice) v) inline {
     return (v'value, v'token, v'address);
 }
 
-((int, int, slice)) $Winner$_constructor_value_token_address(int value, int token, slice address) inline {
-    return (value, token, address);
+((int, int, slice)) $Winner$_constructor_value_token_address(int $value, int $token, slice $address) inline {
+    return ($value, $token, $address);
 }
 
 ;;

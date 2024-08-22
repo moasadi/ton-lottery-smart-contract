@@ -4,7 +4,7 @@
 ;;
 
 ;; __tact_verify_address
-slice __tact_verify_address(slice address) inline;
+slice __tact_verify_address(slice address) impure inline;
 
 ;; __tact_load_address
 (slice, slice) __tact_load_address(slice cs) inline;
@@ -16,7 +16,7 @@ builder __tact_store_address(builder b, slice address) inline;
 int __tact_my_balance() inline;
 
 ;; __tact_not_null
-forall X -> X __tact_not_null(X x) inline;
+forall X -> X __tact_not_null(X x) impure inline;
 
 ;; __tact_context_get
 (int, slice, int, slice) __tact_context_get() inline;
@@ -121,7 +121,7 @@ _ $Context$_get_value((int, slice, int, slice) v) inline;
 (int, int, slice) $Winner$_to_external(((int, int, slice)) v) inline;
 
 ;; $Winner$_constructor_value_token_address
-((int, int, slice)) $Winner$_constructor_value_token_address(int value, int token, slice address) inline;
+((int, int, slice)) $Winner$_constructor_value_token_address(int $value, int $token, slice $address) inline;
 
 ;; $LotteryPool$_contract_init
 ((int, int, slice), slice, int, int, cell, cell, cell, int, int) $LotteryPool$_contract_init() impure inline_ref;
@@ -154,7 +154,7 @@ int $global_random(int $min, int $max) impure inline;
 (((int, int, slice), slice, int, int, cell, cell, cell, int, int), (int, int, slice)) $LotteryPool$_fun_getLastwinner(((int, int, slice), slice, int, int, cell, cell, cell, int, int) $self) impure inline_ref;
 
 ;; $SendParameters$_constructor_bounce_to_value_mode_body_code_data
-((int, slice, int, int, cell, cell, cell)) $SendParameters$_constructor_bounce_to_value_mode_body_code_data(int bounce, slice to, int value, int mode, cell body, cell code, cell data) inline;
+((int, slice, int, int, cell, cell, cell)) $SendParameters$_constructor_bounce_to_value_mode_body_code_data(int $bounce, slice $to, int $value, int $mode, cell $body, cell $code, cell $data) inline;
 
 ;; $LotteryPool$_fun_forward
 (((int, int, slice), slice, int, int, cell, cell, cell, int, int), ()) $LotteryPool$_fun_forward(((int, int, slice), slice, int, int, cell, cell, cell, int, int) $self, slice $to, cell $body, int $bounce, tuple $init) impure inline_ref;
@@ -166,7 +166,7 @@ int $global_random(int $min, int $max) impure inline;
 (((int, int, slice), slice, int, int, cell, cell, cell, int, int), slice) $LotteryPool$_fun_owner(((int, int, slice), slice, int, int, cell, cell, cell, int, int) $self) impure inline_ref;
 
 ;; $TokenPayoutResponse$_constructor_token
-((slice)) $TokenPayoutResponse$_constructor_token(slice token) inline;
+((slice)) $TokenPayoutResponse$_constructor_token(slice $token) inline;
 
 ;; $DeployOk$_constructor_queryId
-((int)) $DeployOk$_constructor_queryId(int queryId) inline;
+((int)) $DeployOk$_constructor_queryId(int $queryId) inline;

@@ -1,14 +1,14 @@
 import * as fs from "fs";
 import * as path from "path";
 import { Address, contractAddress } from "@ton/core";
-import { Lottery} from "./output/lotterytactcontracte_Lottery";
+import { lottery} from "./output/mm_mega_milion_lottery";
 import { prepareTactDeployment } from "@tact-lang/deployer";
 
 (async () => {
     // Parameters
     let testnet = true;
-    let packageName = "lotterytactcontracte_Lottery.pkg";
-    let init = await Lottery.init();
+    let packageName = "mm_mega_milion_lottery.pkg";
+    let init = await lottery.init();
 
     // Load required data
     let address = contractAddress(0, init);

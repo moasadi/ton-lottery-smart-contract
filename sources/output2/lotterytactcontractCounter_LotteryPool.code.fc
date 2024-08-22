@@ -1,4 +1,4 @@
-#pragma version =0.4.3;
+#pragma version =0.4.4;
 #pragma allow-post-modification;
 #pragma compute-asm-ltr;
 
@@ -135,20 +135,6 @@ _ %owner() method_id(83229) {
     var self = $LotteryPool$_contract_load();
     var res = self~$LotteryPool$_fun_owner();
     return res;
-}
-
-_ supported_interfaces() method_id {
-    return (
-        "org.ton.introspection.v0"H >> 128,
-        "org.ton.abi.ipfs.v0"H >> 128,
-        "org.ton.deploy.lazy.v0"H >> 128,
-        "org.ton.chain.workchain.v0"H >> 128,
-        "org.ton.ownable"H >> 128
-    );
-}
-
-_ get_abi_ipfs() method_id {
-    return "ipfs://QmRShLaDKJ78GaM5znAW32BUwyPA6TjFMaCggpjXC2ccFs";
 }
 
 _ lazy_deployment_completed() method_id {

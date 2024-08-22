@@ -1,9 +1,9 @@
 # TACT Compilation Report
 Contract: LotteryPool
-BOC Size: 1711 bytes
+BOC Size: 1547 bytes
 
 # Types
-Total Types: 12
+Total Types: 13
 
 ## StateInit
 TLB: `_ code:^cell data:^cell = StateInit`
@@ -53,6 +53,10 @@ Signature: `TokenPayoutResponse{token:^string}`
 TLB: `_ value:coins token:int257 address:address = Winner`
 Signature: `Winner{value:coins,token:int257,address:address}`
 
+## LotteryPool$Data
+TLB: `null`
+Signature: `null`
+
 # Get Methods
 Total Get Methods: 5
 
@@ -67,7 +71,7 @@ Total Get Methods: 5
 ## owner
 
 # Error Codes
-2: Stack undeflow
+2: Stack underflow
 3: Stack overflow
 4: Integer overflow
 5: Integer out of expected range
@@ -95,3 +99,22 @@ Total Get Methods: 5
 10913: Maximum token supply reached!
 21842: Owner only access to run the game!
 57066: Each token price is 1 ton
+
+# Trait Inheritance Diagram
+
+```mermaid
+graph TD
+LotteryPool
+LotteryPool --> BaseTrait
+LotteryPool --> Deployable
+Deployable --> BaseTrait
+LotteryPool --> Ownable
+Ownable --> BaseTrait
+```
+
+# Contract Dependency Diagram
+
+```mermaid
+graph TD
+LotteryPool
+```
